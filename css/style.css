@@ -698,6 +698,9 @@ body.boxed .body .site-header, body.boxed .body .main-menu-wrapper{
 	margin-top:10px;
 	vertical-align:text-bottom;
 	text-align:left;
+	font-size:28px;
+	font-weight:400;
+	font-family: 'Roboto', serif;
 	/* height:70px */
 }
 
@@ -705,6 +708,7 @@ body.boxed .body .site-header, body.boxed .body .main-menu-wrapper{
 	display:table-cell;
     vertical-align:middle;
 	text-decoration:none;
+	font-size:50%
 }
 .donate{
 	float:right;

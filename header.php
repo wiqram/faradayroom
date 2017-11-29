@@ -55,13 +55,13 @@ include "connect.php";
     <div class="topbar">
       <div class="container">
         <div class="row">
-          <div class="col-md-3 col-sm-4">
-            <h1 class="logo"> <a href="index.php"><img src="images/Predictonomy Logo Official v0.3.png" alt="Logo"></a> </h1>
+          <div class="col-sm-10 col-xs-10">
+            <h1 class="logo"> <a href="index.php"><img src="images/Predictonomy Logo Official v0.3.png" alt="Logo">Predicting the economy through AI</a></h1>
           </div>
-          <div class="col-md-5 col-sm-6">
-            <h3 class="HeaderStrapline" >Predicting the economy through AI</h1>
-          </div>
-          <div class="col-md-1 col-sm-1">
+          <!-- <div class="col-xs-7">
+            <h4 class="HeaderStrapline">Predicting the economy through AI</h4>
+          </div> -->
+          <div class="col-sm-2 col-xs-2">
           <!--  link to donate page -->
             <!-- <ul class="top-navigation ">
               <li><a href="donate.php">Donate Now</a></li>
