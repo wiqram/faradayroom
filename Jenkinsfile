@@ -1,9 +1,10 @@
 node {
   stage('Checkout'){
   git url: "https://github.com/wiqram/Predictonomy.git", credentialsId: '7b88f88d-a254-41d8-90fb-6b6cb399bfcf'
-  //sh 'git rev-parse HEAD > .git/commit-id'
-        //def commit_id = readFile('.git/commit-id').trim()
-        echo "${commit_id}"
+  sh "git rev-parse HEAD > .git/commit-id"
+  sh "printenv"
+	def commit_id = readFile('.git/commit-id').trim()
+	echo "${commit_id}"
  }
  echo "out of checkout"
   stage('build'){
