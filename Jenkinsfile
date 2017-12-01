@@ -27,7 +27,7 @@ node() {
    }
    stage('Docker run'){
    echo "in docker run now"
-   app.withRun('--name predictainer31 -p 3306:3306')
+   app.withRun('-p 3306:3306'){}
    echo "docker ran with container created name predicatiner31" 
    }
  }
