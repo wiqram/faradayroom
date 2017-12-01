@@ -1,5 +1,5 @@
 node {
-	def app
+	
   stage('Checkout'){
   checkout scm  
   echo "build id - ${env.BUILD_ID}"
@@ -11,7 +11,7 @@ node {
   stage('build'){
   		echo "in build stage"
   		echo "after sh thingy"
-        app = docker.build("predictonomy/repo")
+        def app = docker.build("predictonomy/repo")
    		echo "docker build succeeded!!!"
   	}
   echo "out of build stage" 
