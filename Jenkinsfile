@@ -10,7 +10,8 @@ node {
  
   stage('build'){
   		echo "in build stage"
-  		
+  		sh """
+  		echo "after sh thingy"
         app = docker.build("predictonomy/repo")
    		echo "docker build succeeded!!!"
   	}
