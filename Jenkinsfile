@@ -1,4 +1,5 @@
 node {
+	def app
   stage('Checkout'){
   git url: "https://github.com/wiqram/Predictonomy.git", credentialsId: '7b88f88d-a254-41d8-90fb-6b6cb399bfcf'
   
@@ -6,17 +7,9 @@ node {
  echo "out of checkout"
   stage('build'){
   		echo "in build stage"
-        def app = docker.build "predictonomy/repo"
+        app = docker.build("predictonomy/repo")
  }
-  stage('Test image') {
-        /* Ideally, we would run a test framework against our image.
-         * For this example, we're using a Volkswagen-type approach ;-) */
-		echo "in Test image"
-        app.inside {
-            sh 'echo "Tests passed"'
-        }
-    }
- echo "out of build stage" 
+  echo "out of build stage" 
   stage('Docker push'){
    /* First, the incremental build number from Jenkins
          * Second, the 'latest' tag.
