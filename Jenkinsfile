@@ -11,8 +11,7 @@ node() {
  
   stage('build'){
   		echo "in build stage"
-  		echo "after sh thingy"
-        app = docker.build("predictonomy/repo")
+  		app = docker.build("predictonomy/repo")
    		echo "docker build succeeded!!!"
   	}
   echo "out of build stage" 
@@ -27,8 +26,8 @@ node() {
    }
    stage('Docker run'){
    echo "in docker run now"
-   app.withRun('-p 3306:3306'){}
-   echo "docker ran with container created name predicatiner31" 
+   def container=app.withRun('-p 3306:3306'){}
+   echo "docker ran with container created name ${container}" 
    }
  }
     catch (err) {
