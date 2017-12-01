@@ -24,8 +24,12 @@ node() {
          echo "ecr registration success!!!"
          app.push("${env.BUILD_ID}")
          }
- 
-  }
+   }
+   stage('Docker run'){
+   echo "in docker run now"
+   app.withRun('--name predictainer31 -p 3306:3306')
+   echo "docker ran with container created name predicatiner31" 
+   }
  }
     catch (err) {
 
