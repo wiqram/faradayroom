@@ -15,7 +15,7 @@ node {
    /* First, the incremental build number from Jenkins
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
-  docker.withRegistry('https://068478564052.dkr.ecr.eu-west-2.amazonaws.com', 'AKIAJAR35QWYQEZBQGVA') {
+  docker.withRegistry('https://068478564052.dkr.ecr.eu-west-2.amazonaws.com', 'AKIAJAR35QWYQEZBQGVA (AWS ECR Login)') {
     app.push("${env.BUILD_ID}")
   }
   }
