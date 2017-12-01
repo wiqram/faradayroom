@@ -3,6 +3,7 @@ node {
   stage('Checkout'){
   checkout scm  
   echo "build id - ${env.BUILD_ID}"
+  echo 'env.PATH=' + env.PATH
 	}
  
  echo "out of checkout"
