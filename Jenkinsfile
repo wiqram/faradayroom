@@ -1,4 +1,4 @@
-node('windows') {
+node(label: 'windows') {
     
   stage('Hello') {
     sh 'echo $PATH'
