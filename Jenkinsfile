@@ -1,4 +1,5 @@
 node() {
+	 def app
 	 try {
   stage('Checkout'){
   checkout scm  
@@ -11,7 +12,7 @@ node() {
   stage('build'){
   		echo "in build stage"
   		echo "after sh thingy"
-        def app = docker.build("predictonomy/repo")
+        app = docker.build("predictonomy/repo")
    		echo "docker build succeeded!!!"
   	}
   echo "out of build stage" 
