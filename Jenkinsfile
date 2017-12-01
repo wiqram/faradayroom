@@ -7,11 +7,11 @@ node {
         println commit_id
  
  
-  stage 'Docker build'
-  docker.build('predictonomy/repo')
+  stage "build"
+        def app = docker.build "predictonomy/repo"
  
   stage 'Docker push'
   docker.withRegistry('https://068478564052.dkr.ecr.eu-west-2.amazonaws.com', '068478564052') {
-    docker.image('predictonomy/repo').push("${commit_id}")
+    docker.image('predictonomy/repo').push('${commit_id}')
   }
 }
