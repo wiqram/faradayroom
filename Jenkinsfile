@@ -30,7 +30,7 @@ node() {
   stage('Docker run'){
    echo "in docker run now with docker image = ${app}"
    echo "this is the build id = ${env.BUILD_ID}"
-   def container=app.withRun('-it --name predictainer -p 80:80'){}
+   def container=app.withRun('-it --name predictainer -p 80:80')
    echo "docker ran with container created name ${container}" 
    }
  }
