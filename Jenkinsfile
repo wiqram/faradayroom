@@ -26,10 +26,7 @@ node() {
          buildID = "${env.BUILD_ID}"
          }
    }
-    stage('Stop existing docker containers'){
-   echo "removing existing containers whether they are running or not"
-   echo " existing containers removed"
-   }
+    
   stage('Docker run'){
    echo "in docker run now with docker image = ${app}"
    echo "this is the build id = ${env.BUILD_ID}"
