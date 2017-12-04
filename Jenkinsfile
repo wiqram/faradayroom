@@ -1,5 +1,6 @@
 node() {
 	 def app
+	 def buildID
 	 try {
   stage('Checkout'){
   checkout scm  
@@ -22,6 +23,7 @@ node() {
          docker.withRegistry('https://068478564052.dkr.ecr.eu-west-2.amazonaws.com', 'ecr:eu-west-2:068478564052') {
          echo "ecr registration success!!!"
          app.push("${env.BUILD_ID}")
+         buildID = sh ${env.BUILD_ID}
          }
    }
     stage('Stop existing docker containers'){
@@ -30,7 +32,8 @@ node() {
    }
   stage('Docker run'){
    echo "in docker run now with docker image = ${app}"
-   def container=app.withRun('-it --name predictainer-"${env.BUILD_ID}" -p 80:80'){}
+   echo "this is the build id = ${env.BUILD_ID}"
+   def container=app.withRun('-it --name predictainer -p 80:80'){}
    echo "docker ran with container created name ${container}" 
    }
  }
