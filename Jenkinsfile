@@ -24,11 +24,10 @@ node() {
          app.push("${env.BUILD_ID}")
          }
    }
-      
-   stage('Docker run'){
+  stage('Docker run'){
    echo "in docker run now with docker image = ${app}"
    echo "removing existing containers
-   sh "removeExistingContainers.sh"
+   sh "docker ps -qa | xargs docker rm -f"
    echo "existing containers removed"
    def container=app.withRun('-it -p 80:80'){}
    echo "docker ran with container created name ${container}" 
