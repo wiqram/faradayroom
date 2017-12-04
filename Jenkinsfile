@@ -27,7 +27,7 @@ node() {
     stage('Stop existing docker containers'){
    echo "removing existing containers whether they are running or not"
   
-   sh "docker ps -qa | xargs docker rm -f"
+   /*sh "docker ps -qa | xargs docker rm -f"*/
     echo " existing containers removed"
    }
   stage('Docker run'){
