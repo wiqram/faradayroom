@@ -26,7 +26,7 @@ node() {
    }
   stage('Docker run'){
    echo "in docker run now with docker image = ${app}"
-   echo "removing existing containers
+   echo "removing existing containers"
    /*sh "docker ps -qa | xargs docker rm -f"*/
    echo "existing containers removed"
    def container=app.withRun('-it -p 80:80'){}
