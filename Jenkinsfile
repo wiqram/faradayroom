@@ -26,13 +26,11 @@ node() {
    }
     stage('Stop existing docker containers'){
    echo "removing existing containers whether they are running or not"
-  
-   /*sh "docker ps -qa | xargs docker rm -f"*/
-    echo " existing containers removed"
+   echo " existing containers removed"
    }
   stage('Docker run'){
    echo "in docker run now with docker image = ${app}"
-   def container=app.withRun('-it --name predictainer -p 80:80'){}
+   def container=app.withRun('-it --name predictainer-"${env.BUILD_ID}" -p 80:80'){}
    echo "docker ran with container created name ${container}" 
    }
  }
