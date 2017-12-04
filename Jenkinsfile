@@ -23,7 +23,7 @@ node() {
          docker.withRegistry('https://068478564052.dkr.ecr.eu-west-2.amazonaws.com', 'ecr:eu-west-2:068478564052') {
          echo "ecr registration success!!!"
          app.push("${env.BUILD_ID}")
-         buildID = sh ${env.BUILD_ID}
+         buildID = "${env.BUILD_ID}"
          }
    }
     stage('Stop existing docker containers'){
