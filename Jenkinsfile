@@ -2,6 +2,7 @@ node() {
 	 def app
 	 def buildID
 	 def appRepoName="predictonomy/repo"
+	 def repoURL="https://068478564052.dkr.ecr.eu-west-2.amazonaws.com"
 	 try {
   stage('Checkout'){
   checkout scm  
@@ -22,7 +23,7 @@ node() {
    /* First, the incremental build number from Jenkins
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
-         docker.withRegistry('https://068478564052.dkr.ecr.eu-west-2.amazonaws.com', 'ecr:eu-west-2:068478564052') {
+         docker.withRegistry('"${repoURL}"', 'ecr:eu-west-2:068478564052') {
          echo "ecr registration success!!!"
          app.push("${env.BUILD_ID}")
          buildID = "${env.BUILD_ID}"
