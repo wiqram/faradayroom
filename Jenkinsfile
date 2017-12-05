@@ -28,10 +28,19 @@ node() {
    }
     
   stage('Docker run'){
+   steps {
+   echo "inside steps of docker run"
+   sh '''
+   echo docker ps -a
+   docker ps -qa | xargs docker rm -f
+   echo docker ps -a
+   '''
+   echo "ran sh command to remove docker containers"
    echo "in docker run now with docker image = ${app}"
    echo "this is the build id = ${env.BUILD_ID}"
    def container=app.withRun('-it --name predictainer -p 80:80'){}
-   echo "docker ran with container created name ${container}" 
+   }  
+   echo "docker ran with container created name ${container}"
    }
  }
     catch (err) {
