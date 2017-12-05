@@ -1,6 +1,5 @@
 node() {
 	 def app
-	 def buildID
 	 def appRepoName="predictonomy/repo"
 	 def repoURI="068478564052.dkr.ecr.eu-west-2.amazonaws.com"
 	 try {
@@ -26,7 +25,6 @@ node() {
          docker.withRegistry("https://${repoURI}", 'ecr:eu-west-2:068478564052') {
          echo "ecr registration success!!!"
          app.push("${env.BUILD_ID}")
-         buildID = "${env.BUILD_ID}"
          }
    }
   
