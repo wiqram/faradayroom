@@ -39,8 +39,7 @@ node() {
 	if (containersActive.size()>0){
 	sh (
    script: """\
-   docker stop | xargs docker ps -a -q \
-   docker rm | xargs docker ps -a -q \
+   docker ps -qa | xargs docker rm -f \
    """,
    )}
 	
