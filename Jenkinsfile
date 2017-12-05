@@ -45,7 +45,7 @@ node() {
 	).trim()
    echo "docker ran with container created name ${container}"*/
     def container=sh (
-   script: 'cat script.sh',
+   script: 'docker run -it --name predictainer-111 -p 80:80 predictonomy/repo:latest',
    returnStdout: true
 	).trim()
 	echo "script.sh contains ------ ${container}"
