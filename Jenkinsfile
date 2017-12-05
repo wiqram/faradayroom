@@ -37,13 +37,7 @@ node() {
 	if (containersActive.size()>0){
 	sh (
    script: """\
-   var number_of_containers=`docker ps -a -q`\
-   echo "size of containers"number_of_containers.size()\
-   if[number_of_containers.size()>1]\
-   then 
-   echo "there are containers existing"
-   docker ps -qa | xargs docker rm -f \
-   fi\
+   docker ps -qa | xargs docker rm -f || true\
    """,
    )}
 	
