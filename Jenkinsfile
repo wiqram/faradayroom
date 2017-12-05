@@ -55,10 +55,10 @@ node() {
    returnStdout: true
 	).trim()
    echo "docker ran with container created name ${container}"*/
-    def container=sh (
+    sh (
    script: "docker run -i --name predictainer-\"${env.BUILD_ID}\" -p 80:80 \"${appRepoName}\":latest",
   	)
-	echo "container name is ------ ${container}"
+	echo "container created"
    echo "THE END-------------------------"
    }
  }
