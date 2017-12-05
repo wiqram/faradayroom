@@ -30,17 +30,11 @@ node() {
    }
   
   stage('Docker run'){
-   echo "inside steps of docker run"
-   sh 'docker ps -a -q; echo $? > status'
-   containersActive = readFile('status').trim()
-	echo "active containers currently installed on ec2 after : ${containersActive.size()}"
-	if (containersActive.size()>0){
-	sh (
+   sh (
    script: """\
    docker ps -qa | xargs docker rm -f || true\
    """,
-   )}
-	
+   )
    echo "ran sh command to remove docker containers"
    echo "in docker run now with docker image = ${app}"
    echo "this is the build id = ${env.BUILD_ID}"
