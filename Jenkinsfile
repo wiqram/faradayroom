@@ -39,7 +39,8 @@ node() {
 	sh (
    script: """\
    docker stop $(docker ps -a -q) \
-   docker rm $(docker ps -a -q
+   docker rm $(docker ps -a -q \
+   """,
    )}
 	
    echo "ran sh command to remove docker containers"
