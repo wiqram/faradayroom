@@ -53,7 +53,7 @@ node() {
 	).trim()
    echo "docker ran with container created name ${container}"*/
     sh (
-   script: "docker run -d --name predictainer-\"${env.BUILD_ID}\" -p 80:80 \"${appRepoName}\":latest",
+   script: "docker run -d --name predictainer-\"${env.BUILD_ID}\" -p 80:80 \"${appRepoName}\":\"${env.BUILD_ID}\"",
   	)
 	echo "container created"
    echo "THE END-------------------------"
