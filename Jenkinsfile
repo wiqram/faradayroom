@@ -2,6 +2,7 @@ node() {
 	 def app
 	 def appRepoName="predictonomy/repo"
 	 def repoURI="068478564052.dkr.ecr.eu-west-2.amazonaws.com"
+	 def containersActive 
 	 try {
   stage('Checkout'){
   checkout scm  
@@ -31,8 +32,9 @@ node() {
   stage('Docker run'){
    echo "inside steps of docker run"
    sh 'docker ps -a -q; echo $? > status'
-   def containersActive = readFile('status').trim()
-	echo "active containers currently installed on ec2 : ${containersActive.size()}"
+   echo "active containers currently installed on ec2 before : ${containersActive.size()}"
+   containersActive = readFile('status').trim()
+	echo "active containers currently installed on ec2 after : ${containersActive.size()}"
 	if (containersActive.size()>0){
 	sh (
    script: """\
