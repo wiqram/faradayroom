@@ -32,7 +32,6 @@ node() {
   stage('Docker run'){
    echo "inside steps of docker run"
    sh 'docker ps -a -q; echo $? > status'
-   echo "active containers currently installed on ec2 before : ${containersActive.size()}"
    containersActive = readFile('status').trim()
 	echo "active containers currently installed on ec2 after : ${containersActive.size()}"
 	if (containersActive.size()>0){
