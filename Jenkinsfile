@@ -31,9 +31,9 @@ node() {
   stage('Docker run'){
    echo "inside steps of docker run"
    sh '''
-   echo docker ps -a
+
    docker ps -qa | xargs docker rm -f
-   echo docker ps -a
+
    '''
    echo "ran sh command to remove docker containers"
    echo "in docker run now with docker image = ${app}"
