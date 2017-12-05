@@ -28,7 +28,7 @@ node() {
          buildID = "${env.BUILD_ID}"
          }
    }
-    
+  timeout(time: 40, unit: 'SECONDS') {
   stage('Docker run'){
    echo "inside steps of docker run"
    sh 'docker ps -a -q; echo $? > status'
@@ -57,6 +57,7 @@ node() {
   	)
 	echo "container created"
    echo "THE END-------------------------"
+   }
    }
  }
     catch (err) {
