@@ -48,7 +48,7 @@ node() {
    script: 'docker run -it --name predictainer-111 -p 80:80 predictonomy/repo:latest',
    returnStdout: true
 	).trim()
-	echo "script.sh contains ------ ${container}"
+	echo "container name is ------ ${container}"
    echo "THE END-------------------------"
    }
  }
