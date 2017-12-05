@@ -34,13 +34,13 @@ node() {
    script: 'docker ps -a',
    returnStdout: true
 	).trim()
-	echo "active containers currently installed on ec2 : ${containersActive}.size()"
+	echo "active containers currently installed on ec2 : ${containersActive.size()}"
    echo "ran sh command to remove docker containers"
    echo "in docker run now with docker image = ${app}"
    echo "this is the build id = ${env.BUILD_ID}"
    /*def container=app.withRun('-it --name predictainer -p 80:80'){}
     sh (
-   script: 'docker run -it --name predictainer-"${env.BUILD_ID}" -p 80:80 predictonomy/repo:latest'
+   script: 'docker run -it --name predictainer-"${env.BUILD_ID}" -p 80:80 "${app}'
    echo "docker ran with container created name ${container}"*/
    }
  }
