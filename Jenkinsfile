@@ -30,26 +30,20 @@ node() {
    }
   
   stage('Docker run'){
+   /* First remove the existing containers but set the command to true so that even if
+   there are no containers running or existing the error returned by docker rm command
+   doesnt stop the pipeline process from running further */
    sh (
    script: """\
    docker ps -qa | xargs docker rm -f || true\
    """,
    )
-   echo "ran sh command to remove docker containers"
    echo "in docker run now with docker image = ${app}"
    echo "this is the build id = ${env.BUILD_ID}"
-   /*def container=app.withRun('-it --name predictainer -p 80:80'){}
-   def imageID=app.id
-   echo "this is imageID = ${imageID}"
-   def container=sh (
-   script: 'docker run -it --name predictainer-"${env.BUILD_ID}" -p 80:80 "${app}"',
-   returnStdout: true
-	).trim()
-   echo "docker ran with container created name ${container}"*/
-    sh (
+   sh (
    script: "docker run -d --name predictainer-\"${env.BUILD_ID}\" -p 80:80 \"${repoURI}\"/\"${appRepoName}\":\"${env.BUILD_ID}\"",
   	)
-	echo "container created"
+   echo "container created"
    echo "THE END-------------------------"
    }
    
