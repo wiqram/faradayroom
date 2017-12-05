@@ -28,7 +28,7 @@ node() {
          buildID = "${env.BUILD_ID}"
          }
    }
-  timeout(time: 40, unit: 'SECONDS') {
+  
   stage('Docker run'){
    echo "inside steps of docker run"
    sh 'docker ps -a -q; echo $? > status'
@@ -53,12 +53,12 @@ node() {
 	).trim()
    echo "docker ran with container created name ${container}"*/
     sh (
-   script: "docker run -i --name predictainer-\"${env.BUILD_ID}\" -p 80:80 \"${appRepoName}\":latest",
+   script: "docker run --name predictainer-\"${env.BUILD_ID}\" -p 80:80 \"${appRepoName}\":latest",
   	)
 	echo "container created"
    echo "THE END-------------------------"
    }
-   }
+   
  }
     catch (err) {
 
