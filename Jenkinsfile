@@ -39,15 +39,16 @@ node() {
    echo "in docker run now with docker image = ${app}"
    echo "this is the build id = ${env.BUILD_ID}"
    /*def container=app.withRun('-it --name predictainer -p 80:80'){}
-    def container=sh (
+   def imageID=app.id
+   echo "this is imageID = ${imageID}"
+   def container=sh (
    script: 'docker run -it --name predictainer-"${env.BUILD_ID}" -p 80:80 "${app}"',
    returnStdout: true
 	).trim()
    echo "docker ran with container created name ${container}"*/
     def container=sh (
-   script: "docker run -i --name predictainer-111 -p 80:80 \"${app}\"",
-   returnStdout: true
-	).trim()
+   script: "docker run -i --name predictainer-\"${env.BUILD_ID}\" -p 80:80 \"${app}.image\"",
+  	)
 	echo "container name is ------ ${container}"
    echo "THE END-------------------------"
    }
