@@ -1,6 +1,7 @@
 node() {
 	 def app
 	 def buildID
+	 def appRepoName="predictonomy/repo"
 	 try {
   stage('Checkout'){
   checkout scm  
@@ -12,7 +13,7 @@ node() {
  
   stage('build'){
   		echo "in build stage"
-  		app = docker.build("predictonomy/repo")
+  		app = docker.build("${appRepoName}")
    		echo "docker build succeeded!!!"
   	}
   echo "out of build stage" 
@@ -55,7 +56,7 @@ node() {
 	).trim()
    echo "docker ran with container created name ${container}"*/
     def container=sh (
-   script: "docker run -i --name predictainer-\"${env.BUILD_ID}\" -p 80:80 \"${app}.image\"",
+   script: "docker run -i --name predictainer-\"${env.BUILD_ID}\" -p 80:80 \"${appRepoName}\":latest",
   	)
 	echo "container name is ------ ${container}"
    echo "THE END-------------------------"
