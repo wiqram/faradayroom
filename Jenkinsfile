@@ -35,15 +35,12 @@ node() {
    returnStdout: true
 	).trim()
 	echo "active containers currently installed on ec2 : ${containersActive.size()}"
-	if ("${containersActive.size()">0)
-	{
+	if (containersActive.size()>0){
 	sh (
    script: """\
    docker stop $(docker ps -a -q) \
    docker rm $(docker ps -a -q
-   )
-	
-	}
+   )}
 	
    echo "ran sh command to remove docker containers"
    echo "in docker run now with docker image = ${app}"
