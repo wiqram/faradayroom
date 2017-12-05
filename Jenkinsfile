@@ -44,6 +44,7 @@ node() {
    returnStdout: true
 	).trim()
    echo "docker ran with container created name ${container}"
+   echo "THE END-------------------------"
    }
  }
     catch (err) {
