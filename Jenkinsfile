@@ -33,7 +33,7 @@ node() {
    echo "inside steps of docker run"
    def containersActive = sh (
    script: '$(docker ps -a -q)',
-   ).trim()
+   )
 	echo "active containers currently installed on ec2 : ${containersActive.size()}"
 	if (containersActive.size()>0){
 	sh (
