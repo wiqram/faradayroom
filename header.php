@@ -59,7 +59,7 @@ include "connect.php";
             <h1 class="logo"> <a href="index.php"><img src="images/Predictonomy Logo Official v0.3.png" alt="Logo">Predicting the economy through AI</a></h1>
           </div>
           <!-- <div class="col-xs-7">
-            <h4 class="HeaderStrapline">Predicting the economy through AI</h4>
+            <h4 class="HeaderStrapline">PredicFARA the economy through AI</h4>
           </div> -->
           <div class="col-sm-2 col-xs-2">
           <!--  link to donate page -->
