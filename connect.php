@@ -30,7 +30,7 @@ include "idiorm.php";
 $servername = "predictonomydbinstance.cfafrynqkkvu.eu-west-2.rds.amazonaws.com";
  $username = "predictonomydb1";
  $password = "Predictonomy1";
- $database = "predictonomyDB";
+ $database = "faradayroomDB";
  $dbport = 3306;
 
  try {

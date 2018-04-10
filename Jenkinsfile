@@ -1,6 +1,6 @@
 node() {
 	 def app
-	 def appRepoName="predictonomy/repo"
+	 def appRepoName="faradayroom/repo"
 	 def repoURI="068478564052.dkr.ecr.eu-west-2.amazonaws.com"
 	 def containersActive 
 	 try {
@@ -41,7 +41,7 @@ node() {
    echo "in docker run now with docker image = ${app}"
    echo "this is the build id = ${env.BUILD_ID}"
    sh (
-   script: "docker run -d --name predictainer-\"${env.BUILD_ID}\" -p 80:80 \"${repoURI}\"/\"${appRepoName}\":\"${env.BUILD_ID}\"",
+   script: "docker run -d --name faradayroomtainer-\"${env.BUILD_ID}\" -p 80:80 \"${repoURI}\"/\"${appRepoName}\":\"${env.BUILD_ID}\"",
   	)
    echo "container created"
    echo "THE END-------------------------"
