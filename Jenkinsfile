@@ -43,6 +43,10 @@ node() {
    sh (
    script: "docker run -d --name faradayroomtainer-\"${env.BUILD_ID}\" -p 80:80 \"${repoURI}\"/\"${appRepoName}\":\"${env.BUILD_ID}\"",
   	)
+  	   	echo "now that the image is running in container we should remove the image"
+   sh (
+	    script: "docker rmi \"${repoURI}\"/\"${appRepoName}\":\"${env.BUILD_ID}\"",
+	    )
    echo "container created"
    echo "THE END-------------------------"
    }
