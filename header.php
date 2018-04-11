@@ -16,7 +16,7 @@ include "connect.php";
 <!-- Basic Page Needs
   ================================================== -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Predictonomy</title>
+<title>Faraday Room</title>
 <meta name="description" content="">
 <meta name="keywords" content="">
 <meta name="author" content="">
@@ -56,7 +56,7 @@ include "connect.php";
       <div class="container">
         <div class="row">
           <div class="col-sm-10 col-xs-10">
-            <h1 class="logo"> <a href="index.php"><img src="images/Predictonomy Logo Official v0.3.png" alt="Logo">Make yourself invisible from the prying eyes on the Internet</a></h1>
+            <h1 class="logo"> <a href="index.php"><img src="images/Faraday Room Logo 1.png" alt="Logo">Make yourself invisible from the prying eyes on the Internet</a></h1>
           </div>
           <!-- <div class="col-xs-7">
             <h4 class="HeaderStrapline">PredicFARA the economy through AI</h4>
