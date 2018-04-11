@@ -4,8 +4,8 @@
       <div class="row"> 
         <!-- Start Footer Widgets -->
         <div class="col-md-4 col-sm-4 widget footer-widget">
-          <h4 class="footer-widget-title">About Predictonomy</h4>
-          <img src="images/Predictonomy Logo Official v0.3.png" alt="Logo">
+          <h4 class="footer-widget-title">About Faraday Room</h4>
+          <img src="images/Faraday Room Logo 5.png" alt="Logo">
 		  <?php
 				$result = $db->prepare("SELECT * FROM welcome");
 				$result->execute();
@@ -43,7 +43,7 @@
     <div class="container">
       <div class="row">
         <div class="copyrights-col-left col-md-6 col-sm-6">
-          <p>&copy; 2017 Predictonomy. All Rights Reserved</p>
+          <p>&copy; 2018 FaradayRoom.com. All Rights Reserved</p>
         </div>
         <div class="copyrights-col-right col-md-6 col-sm-6">
           <div class="social-icons"> <a href="https://www.facebook.com/<?php echo $row['facebook']; ?>" target="_blank"><i class="fa fa-facebook"></i></a> <a href="https://twitter.com/<?php echo $row['twitter']; ?>" target="_blank"><i class="fa fa-twitter"></i></a> <a href="https://instagram.com/<?php echo $row['status']; ?>" target="_blank"><i class="fa fa-instagram"></i></a></div>

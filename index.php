@@ -41,7 +41,7 @@
             <!-- Events Listing -->
             <div class="listing events-listing">
               <header class="listing-header">
-                <h3 class=" titles">Welcome to Predictonomy</h3>
+                <h3 class=" titles">Welcome to FaradayRoom</h3>
               </header>
 			  <?php
 				$result = $db->prepare("SELECT * FROM welcome");
